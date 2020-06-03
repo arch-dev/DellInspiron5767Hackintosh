@@ -1,0 +1,9 @@
+https://github.com/acidanthera/OpenCorePkg/releases,OpenCore
+https://github.com/acidanthera/AppleALC/releases,AppleALC
+https://github.com/acidanthera/CPUFriend/releases,CPUFriend
+https://github.com/acidanthera/Lilu/releases,Lilu
+https://github.com/acidanthera/VirtualSMC/releases,VirtualSMC
+https://github.com/acidanthera/VoodooPS2/releases,VoodooPS2Controller
+https://github.com/acidanthera/WhateverGreen/releases,WhateverGreen
+https://github.com/VoodooI2C/VoodooI2C/releases,VoodooI2C
+https://github.com/acidanthera/OcBinaryData/archive,OcBinaryData
