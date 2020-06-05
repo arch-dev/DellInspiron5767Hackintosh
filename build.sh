@@ -59,9 +59,9 @@ mkdir -p $OUTDIR/EFI/{BOOT,OC/{ACPI,Bootstrap,Drivers,Kexts,Resources/{Audio,Fon
 check "curl"
 echo Downloading necessary files...
 mkdir $TEMP
-download $TEMP "packages.txt"
+download $TEMP "Dependencies/packages.txt"
 mkdir $TOOLS
-download $TOOLS "tools.txt"
+download $TOOLS "Dependencies/tools.txt"
 for file in $ACPI/*
 do
  $TOOLS/MaciASL/MaciASL-master/Dist/iasl-stable $file
@@ -70,7 +70,7 @@ echo Copying files to EFI...
 find . -name \*.kext -exec cp {} $OUTDIR/EFI/OC/Kexts \;
 while IFS= read -r line; do
  cp $TEMP/$(echo $line | cut -d ',' -f 1) $OUTDIR/$(echo $line | cut -d ',' -f 2)
-done <efi.txt
+done <"Dependencies/efi.txt"
 cp $TEMP/OcBinaryData/OcBinaryData-master/Resources/Audio/OCEFIAudio_VoiceOver_Boot.wav $OUTDIR/EFI/OC/Resources/
 cp $TEMP/OcBinaryData/OcBinaryData-master/Resources/Font/ $OUTDIR/EFI/OC/Resources/
 cp $TEMP/OcBinaryData/OcBinaryData-master/Resources/Image/ $OUTDIR/EFI/OC/Resources/
