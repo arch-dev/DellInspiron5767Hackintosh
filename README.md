@@ -373,7 +373,9 @@ The two patches above are known as "OS check fix" since some laptops like ours e
 |   HibernationFixup    |   Fixes hibernation process   |
 
 ## Troubleshooting
-To get help just open a issue or best thing head over hackintosh sites
+To get help just open a issue or best thing head over my thread
+- https://www.tonymacx86.com/threads/guide-opencore-dell-inspiron-17-5767-i7-7500u.299242
+or visit hackintosh sites on the web
 - https://www.tonymacx86.com
 - https://www.insanelymac.com
 and others
