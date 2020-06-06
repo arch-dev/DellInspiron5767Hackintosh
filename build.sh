@@ -68,7 +68,7 @@ do
 done
 echo Copying files to EFI...
 find $TEMP/ -name \*.kext -exec cp {} $OUTDIR/EFI/OC/Kexts \;
-cp Wi-Fi/itlwm.kext $OUTDIR/EFI/OC/Kexts
+cp Prebuilt/\*.kext $OUTDIR/EFI/OC/Kexts
 while IFS= read -r line; do
  cp $TEMP/$(echo $line | cut -d ',' -f 1) $OUTDIR/$(echo $line | cut -d ',' -f 2)
 done <"Dependencies/efi.txt"
