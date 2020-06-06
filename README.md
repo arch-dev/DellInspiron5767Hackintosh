@@ -345,6 +345,8 @@ The two patches above are known as "OS check fix" since some laptops like ours e
 
 7. Run script *Audio/ComboJack_Installer/install.sh* to fix 3.5mm jack output and reboot. When you will connect a dialog asking you to select what you connected should show up
 
+8. Copy *Audio/ComboJack_installer/VerbStub.kext* to your HDD *EFI/OC/Kexts* folder
+
 ## Table of contents
 ### ACPI
 |   SSDT-DDGPU.dsl  |   Disables AMD Radeon M445    |

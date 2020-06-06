@@ -68,6 +68,10 @@ do
 done
 echo Copying files to EFI...
 find $TEMP/ -name \*.kext -exec cp {} $OUTDIR/EFI/OC/Kexts \;
+rm -rf $OUTDIR/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext
+rm -rf $OUTDIR/EFI/OC/Kexts/VoodooI2CELAN.kext
+rm -rf $OUTDIR/EFI/OC/Kexts/VoodooI2CFTE.kext
+rm -rf $OUTDIR/EFI/OC/Kexts/VoodooI2CSynaptics.kext
 cp Prebuilt/\*.kext $OUTDIR/EFI/OC/Kexts
 while IFS= read -r line; do
  cp $TEMP/$(echo $line | cut -d ',' -f 1) $OUTDIR/$(echo $line | cut -d ',' -f 2)
