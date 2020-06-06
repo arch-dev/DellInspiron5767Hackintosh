@@ -342,3 +342,47 @@ The two patches above are known as "OS check fix" since some laptops like ours e
     (Remeber to disable *"AppleCpuPmCfgLock"* and *"AppleXcpmCfgLock"* under *"Kernel">"Quirks"* once done)
     
 6. Open System Preferences and disable PowerNap and wake on ethernet under *"Energy Saving"*
+
+7. Run script *Audio/ComboJack_Installer/install.sh* to fix 3.5mm jack output and reboot. When you will connect a dialog asking you to select what you connected should show up
+
+## Table of contents
+### ACPI
+|   SSDT-DDGPU.dsl  |   Disables AMD Radeon M445    |
+|   SSDT-DMAC.dsl   |   Adds missing DMAC device |
+|   SSDT-EC-USBX.dsl    |   Adds missing EC controller and inject USB power properties   |
+|   SSDT-EXT4.dsl   |   Wakes our screen up on waking   |
+|   SSDT-GPI0.dsl   |   Injects GPI0 to enable interrupt mode for I2C trackpad   |
+|   SSDT-MCHC.dsl   |   Adds missing MCHC device    |
+|   SSDT-MEM2.dsl   |   Adds missing MEM2 device    |
+|   SSDT-PLUG.dsl   |   Injects plugin-type to fix Native Power Management  |
+|   SSDT-PMCR.dsl   |   Adds missing PMCR device    |
+|   SSDT-PNLF.dsl   |   Injects backlight properties to fix backlight control    |
+|   SSDT-SBUS.dsl   |   Fixes Serial BUS for correct sensors management   |
+
+### Kexts
+|   AppleALC    |   Fixes onboard audio |
+|   CPUFriend   |   Fixes CPU power management  |
+|   Lilu    |   Fixes lot of things and make laptop boot    |
+|   VirtualSMC  |   Fakes our laptop as MacBook making it boot  |
+|   VoodooPS2Controller |   Fixes keyboard  |
+|   WhateverGreen   |   Fixes Intel HD Graphics |
+|   VoodooI2C   |   Fixes trackpad  |
+
+## Troubleshooting
+To get help just open a issue or best thing head over hackintosh sites
+- https://www.tonymacx86.com
+- https://www.insanelymac.com
+and others
+
+## Where can I learn more?
+- https://dortania.github.io
+- https://www.tonymacx86.com
+- https://www.insanelymac.com
+
+## Thanks
+@Acidanthera team for this new and more macOS friendly bootloader
+@dortania team for detailed guides
+@CorpNewt for his amazing scripts, ACPIs, plugins
+@VoodooI2C for make I2C trackpad's gestures possible
+@RehabMan for his crucial role in the hackintosh world. That will never be forgotten since most of the projects above are based on his work.
+@zxystd for his work on Intel Wi-Fi cards (no anyone else wanted to work on this in the past so he's doing something deemed by all impossible)
