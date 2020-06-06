@@ -349,28 +349,34 @@ The two patches above are known as "OS check fix" since some laptops like ours e
 
 ## Table of contents
 ### ACPI
-|   SSDT-DDGPU.dsl  |   Disables AMD Radeon M445    |
-|   SSDT-DMAC.dsl   |   Adds missing DMAC device |
-|   SSDT-EC-USBX.dsl    |   Adds missing EC controller and inject USB power properties   |
-|   SSDT-EXT4.dsl   |   Wakes our screen up on waking   |
-|   SSDT-GPI0.dsl   |   Injects GPI0 to enable interrupt mode for I2C trackpad   |
-|   SSDT-MCHC.dsl   |   Adds missing MCHC device    |
-|   SSDT-MEM2.dsl   |   Adds missing MEM2 device    |
-|   SSDT-PLUG.dsl   |   Injects plugin-type to fix Native Power Management  |
-|   SSDT-PMCR.dsl   |   Adds missing PMCR device    |
-|   SSDT-PNLF.dsl   |   Injects backlight properties to fix backlight control    |
-|   SSDT-SBUS.dsl   |   Fixes Serial BUS for correct sensors management   |
+
+| ACPI file | Description |
+| --- | --- |
+| SSDT-DDGPU.dsl | Disables AMD Radeon M445 |
+| SSDT-DMAC.dsl | Adds missing DMAC device |
+| SSDT-EC-USBX.dsl | Adds missing EC controller and inject USB power properties |
+| SSDT-EXT4.dsl | Wakes our screen up on waking |
+| SSDT-GPI0.dsl | Injects GPI0 to enable interrupt mode for I2C trackpad |
+| SSDT-MCHC.dsl | Adds missing MCHC device |
+| SSDT-MEM2.dsl | Adds missing MEM2 device |
+| SSDT-PLUG.dsl | Injects plugin-type to fix Native Power Management |
+| SSDT-PMCR.dsl | Adds missing PMCR device |
+| SSDT-PNLF.dsl | Injects backlight properties to fix backlight control |
+| SSDT-SBUS.dsl | Fixes Serial BUS for correct sensors management |
 
 ### Kexts
-|   AppleALC    |   Fixes onboard audio |
-|   CPUFriend   |   Fixes CPU power management  |
-|   Lilu    |   Fixes lot of things and make laptop boot    |
-|   VirtualSMC  |   Fakes our laptop as MacBook making it boot  |
-|   VoodooPS2Controller |   Fixes keyboard  |
-|   WhateverGreen   |   Fixes Intel HD Graphics |
-|   VoodooI2C   |   Fixes trackpad  |
-|   VoodooI2CHID    |   VoodooI2C plugin for Precision Trackpad |
-|   HibernationFixup    |   Fixes hibernation process   |
+
+| Kext file | Description |
+| --- | --- |
+| AppleALC | Fixes onboard audio |
+| CPUFriend | Fixes CPU power management |
+| Lilu | Fixes lot of things and make laptop boot |
+| VirtualSMC | Fakes our laptop as MacBook making it boot |
+| VoodooPS2Controller | Fixes keyboard |
+| WhateverGreen | Fixes Intel HD Graphics |
+| VoodooI2C | Fixes trackpad |
+| VoodooI2CHID | VoodooI2C plugin for Precision Trackpad |
+| HibernationFixup | Fixes hibernation process |
 
 ## Troubleshooting
 To get help just open a issue or best thing head over my thread
