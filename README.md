@@ -369,6 +369,8 @@ The two patches above are known as "OS check fix" since some laptops like ours e
 |   VoodooPS2Controller |   Fixes keyboard  |
 |   WhateverGreen   |   Fixes Intel HD Graphics |
 |   VoodooI2C   |   Fixes trackpad  |
+|   VoodooI2CHID    |   VoodooI2C plugin for Precision Trackpad |
+|   HibernationFixup    |   Fixes hibernation process   |
 
 ## Troubleshooting
 To get help just open a issue or best thing head over hackintosh sites
