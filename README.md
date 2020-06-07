@@ -342,9 +342,13 @@ The two patches above are known as "OS check fix" since some laptops like ours e
     If you are on macOS just navigate to *"File">"Save as">"ACPI Machine Language Binary"* with original filename.
     Saving phase is very important since **OpenCore will only inject ACPI *.aml* files**.
     
-12. Now copy just compiled *DSDT.aml* to *Out/EFI/OC/ACPI*. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously.
+12. Now copy just compiled *DSDT.aml* to *Out/EFI/OC/ACPI*. 
 
-13. Now it's time to boot macOS installer from your USB drive
+13. Open *Out/EFI/OC/Kexts/itlwm.kext/Contents/Info.plist* and edit Wi-Fi connections' info under *"IOKitPersonalities">"WiFiConfig"* setting your Wi-Fi's SSID and password
+
+14. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously.
+
+15. Now it's time to boot macOS installer from your USB drive
 
 ### macOS installation
 1. On OpenCore boot screen select *"Install macOS from your_usb"*
