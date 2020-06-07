@@ -310,17 +310,39 @@ The two patches above are known as "OS check fix" since some laptops like ours e
         External (EXT4, MethodObj)
     
     External calls above are needed to call missing method which are stored in ACPI table and files under *EFI/OC/ACPI*
+    
+10. Add the following under the end of *_SB.PCI0*
+    
+        Device (PCI9)
+        {
+            Name (_ADR, Zero)  // _ADR: Address
+            Name (FNOK, Zero)
+            Name (MODE, Zero)
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
+            }
+        }
+        
+    This will add *PCI9* device to manage other DSDT patches
 
-10. Finally if you are under Windows close DSDT.dsl open terminal and run the following
+11. Finally if you are under Windows close DSDT.dsl open terminal and run the following
 
         .\path\to\iasl-stable.exe \path\to\DSDT.dsl
 
     If you are on macOS just navigate to *"File">"Save as">"ACPI Machine Language Binary"* with original filename.
     Saving phase is very important since **OpenCore will only inject ACPI *.aml* files**.
     
-11. Now copy just compiled *DSDT.aml* to *Out/EFI/OC/ACPI*. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously.
+12. Now copy just compiled *DSDT.aml* to *Out/EFI/OC/ACPI*. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously.
 
-12. Now it's time to boot macOS installer from your USB drive
+13. Now it's time to boot macOS installer from your USB drive
 
 ### macOS installation
 1. On OpenCore boot screen select *"Install macOS from your_usb"*
