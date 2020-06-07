@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>19E2269</string>
+	<string>19F101</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -59,9 +59,9 @@
 				<key>WiFi_1</key>
 				<dict>
 					<key>password</key>
-					<string>5US97NT6N8GNCRP5LFO28MQD8V4GT5nio3v24cjepouffo4svae3ap</string>
+					<string>zxyssdt112233</string>
 					<key>ssid</key>
-					<string>LinksysGUS</string>
+					<string>ssdt</string>
 				</dict>
 				<key>WiFi_2</key>
 				<dict>
