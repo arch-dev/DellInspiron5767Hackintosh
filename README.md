@@ -332,6 +332,8 @@ The two patches above are known as "OS check fix" since some laptops like ours e
         }
         
     This will add *PCI9* device to manage other DSDT patches
+    
+    **HINT**: for all patches listed above you can merge your DSDT with mine *DSDT_example* to check if you correctly applied required patches.
 
 11. Finally if you are under Windows close DSDT.dsl open terminal and run the following
 
