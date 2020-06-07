@@ -414,9 +414,9 @@ and others
 - https://www.insanelymac.com
 
 ## Thanks
-@Acidanthera team for this new and more macOS friendly bootloader
-@dortania team for detailed guides
-@CorpNewt for his amazing scripts, ACPIs, plugins
-@VoodooI2C for make I2C trackpad's gestures possible
-@RehabMan for his crucial role in the hackintosh world. That will never be forgotten since most of the projects above are based on his work.
-@zxystd for his work on Intel Wi-Fi cards (no anyone else wanted to work on this in the past so he's doing something deemed by all impossible)
+- @Acidanthera team for this new and more macOS friendly bootloader
+- @dortania team for detailed guides
+- @CorpNewt for his amazing scripts, ACPIs, plugins
+- @VoodooI2C for make I2C trackpad's gestures possible
+- @RehabMan for his crucial role in the hackintosh world. That will never be forgotten since most of the projects above are based on his work.
+- @zxystd for his work on Intel Wi-Fi cards (no anyone else wanted to work on this in the past so he's doing something deemed by all impossible)
