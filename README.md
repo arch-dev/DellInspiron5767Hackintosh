@@ -346,7 +346,9 @@ The two patches above are known as "OS check fix" since some laptops like ours e
 
 13. Open *Out/EFI/OC/Kexts/itlwm.kext/Contents/Info.plist* and edit Wi-Fi connections' info under *"IOKitPersonalities">"WiFiConfig"* setting your Wi-Fi's SSID and password
 
-14. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously.
+14. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously. It should look like the following
+
+![Screenshot 2](../master/Pictures/OC_screen.png?raw=true)
 
 15. Now it's time to boot macOS installer from your USB drive
 
