@@ -346,11 +346,13 @@ The two patches above are known as "OS check fix" since some laptops like ours e
 
 13. Open *Out/EFI/OC/Kexts/itlwm.kext/Contents/Info.plist* and edit Wi-Fi connections' info under *"IOKitPersonalities">"WiFiConfig"* setting your Wi-Fi's SSID and password
 
-14. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously. It should look like the following
+14. Open *Out/EFI/OC/config.plist* and follow [this guide](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/iservices) to correctly fill *"PlatformInfo">"Generic"* empty fields (**Do not change *"SystemProductName"* value, just use the given one**)
+
+15. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously. It should look like the following
 
 ![Screenshot 2](../master/Pictures/OC_screen.png?raw=true)
 
-15. Now it's time to boot macOS installer from your USB drive
+16. Now it's time to boot macOS installer from your USB drive
 
 ### macOS installation
 1. On OpenCore boot screen select *"Install macOS from your_usb"*
