@@ -96,7 +96,10 @@ I'm not responsible for bricked laptops, dead USB drives, thermonuclear war, or 
 3. Run this command in terminal
     - On Windows run the following
     
-            .\path\to\acpidump.exe
+            .\path\to\acpidump.exe -b -n DSDT -z
+            
+        Rename output *dsdt.dat* file to *dsdt.aml*
+            
             .\path\to\iasl-stable.aml dsdt.aml
 
     - On macOS press F4 on Clover bootloader screen or open MaciASL and navigate to *"New from ACPI">"DSDT"*
@@ -311,7 +314,15 @@ The two patches above are known as "OS check fix" since some laptops like ours e
     
     External calls above are needed to call missing method which are stored in ACPI table and files under *EFI/OC/ACPI*
     
-10. Add the following under the end of *_SB.PCI0*
+10. Search for 
+
+        Name (LINX, "Linux")
+        
+    add behind it
+    
+        Name (DRWN, "Darwin")
+    
+11. Add the following under the end of *_SB.PCI0*
     
         Device (PCI9)
         {
@@ -335,20 +346,54 @@ The two patches above are known as "OS check fix" since some laptops like ours e
     
     **HINT**: for all patches listed above you can merge your DSDT with mine *DSDT_example* to check if you correctly applied required patches.
 
-11. Finally if you are under Windows close DSDT.dsl open terminal and run the following
+12. Finally if you are under Windows close DSDT.dsl open terminal and run the following
 
         .\path\to\iasl-stable.exe \path\to\DSDT.dsl
+        
+    You should get some errors that look like the following
+    
+    ![Screenshot 3](../master/Pictures/MaciASL_errors1.png?raw=true)
+    
+    Search for
+    
+        Method (HPME, 0, Serialized)
+        
+    remove all *Zero* before it and into this method. Then you should get
+    
+    ![Screenshot 4](../master/Pictures/MaciASL_errors2.png?raw=true)
+    
+    Search for
+    
+        If (CondRefOf (\_SB.PCI0.RP01.PXSX))
+        
+    and remove it and its content. Search again for
+    
+        If (CondRefOf (\_SB.PCI0.RP01.PXSX))
+        
+    and remove it and its content. Then you should get the following
+    
+    ![Screenshot 5](../master/Pictures/MaciASL_errors3.png?raw=true)
+    
+    Search for
+    
+        If (CondRefOf (\_SB.PCI0.RP01.PXSX))
+        
+    and remove it and its content. Search again for
+    
+        If (CondRefOf (\_SB.PCI0.RP01.PXSX))
+        
+    and remove it and its content. So at the end you should have removed all 4 references to *\_SB.PCI0.RP01.PXSX*.
 
     If you are on macOS just navigate to *"File">"Save as">"ACPI Machine Language Binary"* with original filename.
     Saving phase is very important since **OpenCore will only inject ACPI *.aml* files**.
     
-12. Now copy just compiled *DSDT.aml* to *Out/EFI/OC/ACPI*. 
+13. Now copy just compiled *DSDT.aml* to *Out/EFI/OC/ACPI*. 
 
-13. Open *Out/EFI/OC/Kexts/itlwm.kext/Contents/Info.plist* and edit Wi-Fi connections' info under *"IOKitPersonalities">"WiFiConfig"* setting your Wi-Fi's SSID and password
+14. Open *Out/EFI/OC/Kexts/itlwm.kext/Contents/Info.plist* and edit Wi-Fi connections' info under *"IOKitPersonalities">"WiFiConfig"* setting your Wi-Fi's SSID and password
 
-14. Open *Out/EFI/OC/config.plist* and follow [this guide](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/iservices) to correctly fill *"PlatformInfo">"Generic"* empty fields (**Do not change *"SystemProductName"* value, just use the given one**)
+15. Open *Out/EFI/OC/config.plist* and follow [this guide](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/iservices) to correctly fill *"PlatformInfo">"Generic"* empty fields (**Do not change *"SystemProductName"* value, just use the given one**)
 
-15. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously. It should look like the following
+16. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously. It should look like the following
 
 ![Screenshot 2](../master/Pictures/OC_screen.png?raw=true)
 
