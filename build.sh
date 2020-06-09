@@ -64,10 +64,17 @@ mkdir $TEMP
 download $TEMP "Dependencies/packages.txt"
 mkdir $TOOLS
 download $TOOLS "Dependencies/tools.txt"
-for file in $ACPI/*
-do
- $TOOLS/MaciASL/MaciASL-master/Dist/iasl-stable $file
-done
+if [[ $OSTYPE == "darwin" ]]; then
+ for file in $ACPI/*
+ do
+  $TOOLS/MaciASL/MaciASL-master/Dist/iasl-stable $file
+ done
+elif [[ $OSTYPE == "linux-gnu" ]]; then
+ for file in $ACPI/*
+ do
+  iasl $file
+ done
+fi
 echo Copying files to EFI...
 find $TEMP -name \*.kext -exec cp -R {} $OUTDIR/EFI/OC/Kexts \;
 rm -rf $OUTDIR/EFI/OC/Kexts/SMCLightSensor.kext
