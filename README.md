@@ -92,7 +92,7 @@ I'm not responsible for bricked laptops, dead USB drives, thermonuclear war, or 
     
 ### EFI Installation
 1. Clone this repository
-2. Run build.sh from terminal (WSL on Windows)
+2. Run build.sh from terminal (if using WSL on Windows first install *dos2unix* and run *dos2unix build.sh* to convert the script to unix format)
 3. Run this command in terminal
     - On Windows run the following
     
