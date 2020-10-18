@@ -134,7 +134,7 @@ I'm not responsible for bricked laptops, dead USB drives, thermonuclear war, or 
 
 | ACPI file | Description |
 | --- | --- |
-| SSDT-DDGPU.dsl | Disables AMD Radeon M445 |
+| SSDT-DDGP.dsl | Disables AMD Radeon M445 |
 | SSDT-DMAC.dsl | Adds missing DMAC device |
 | SSDT-EC-USBX.dsl | Adds missing EC controller and inject USB power properties |
 | SSDT-EXT4.dsl | Wakes our screen up on waking |
