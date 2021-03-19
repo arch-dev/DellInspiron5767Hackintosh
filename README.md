@@ -1,7 +1,7 @@
 # Dell Inspiron 5767 Hackintosh (OpenCore)
 macOS on Dell Inspiron 5767 (i7-7500u)
 
-![OpenCore Version](https://img.shields.io/badge/opencore-v0.6.2-blue)
+![OpenCore Version](https://img.shields.io/badge/opencore-v0.6.7-blue)
 
 ![Screenshot 1](../master/Pictures/neofetch.png?raw=true)
 
@@ -12,6 +12,9 @@ I'm not responsible for bricked laptops, dead USB drives, thermonuclear war, or 
 ![OpenCore logo](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Logos/OpenCore_with_text_Small.png)
 
 ## Guide
+
+### IMPORTANT NOTE
+If you are upgrading from OpenCore v0.6.2 you **MUST replace the whole OC folder with the one generated from build script (adding missing files as per guide)** and **EFI/BOOT/BOOTX64.efi** file otherwise you will not able to boot again from MacOS. You **CANNOT just replace files or add/remove missing ones** since from v0.6.2 to v0.6.7 lot of things changed as well as lot of ACPI lines changed from previous Dell BIOS version to latest one.
 
 ### Requirements
 1. Running on macOS or Windows (on Windows you can use WSL https://docs.microsoft.com/it-it/windows/wsl/install-win10)
@@ -134,31 +137,35 @@ I'm not responsible for bricked laptops, dead USB drives, thermonuclear war, or 
 
 | ACPI file | Description |
 | --- | --- |
-| SSDT-DDGP.dsl | Disables AMD Radeon M445 |
-| SSDT-DMAC.dsl | Adds missing DMAC device |
-| SSDT-EC-USBX.dsl | Adds missing EC controller and inject USB power properties |
-| SSDT-EXT4.dsl | Wakes our screen up on waking |
-| SSDT-GPI0.dsl | Injects GPI0 to enable interrupt mode for I2C trackpad |
-| SSDT-MCHC.dsl | Adds missing MCHC device |
-| SSDT-MEM2.dsl | Adds missing MEM2 device |
-| SSDT-PLUG.dsl | Injects plugin-type to fix Native Power Management |
-| SSDT-PMCR.dsl | Adds missing PMCR device |
-| SSDT-PNLF.dsl | Injects backlight properties to fix backlight control |
-| SSDT-SBUS.dsl | Fixes Serial BUS for correct sensors management |
+| DSDT | Even if it's discouraged its use, it avoids OpenCore renames which may break other OS boot |
+| SSDT-DDGP | Disables AMD Radeon M445 |
+| SSDT-EC-USBX | Adds missing EC controller and inject USB power properties |
+| SSDT-EXT4 | Wakes our screen up on waking |
+| SSDT-GPRW | Needed by DSDT |
+| SSDT-PLUG | Injects plugin-type to fix Native Power Management |
+| SSDT-PNLF | Injects backlight properties to fix backlight control |
+| SSDT-SBUS-MCHC | Fixes Serial BUS for correct sensors management and adds missing MCHC device |
 
 ### Kexts
 
 | Kext file | Description |
 | --- | --- |
+| AirportItlwm | Fixes WiFi |
+| IntelBluetoothFirmware | Fixes Bluetooth |
+| IntelBluetoothInjector | Support kext for IntelBluetoothFirmware |
 | AppleALC | Fixes onboard audio |
 | CPUFriend | Fixes CPU power management |
+| CPUFriendDataProvider | CPU power/performance profile |
 | Lilu | Fixes lot of things and make laptop boot |
 | VirtualSMC | Fakes our laptop as MacBook making it boot |
+| SMCBatteryManager | Fixes battery percentage |
 | VoodooPS2Controller | Fixes keyboard |
 | WhateverGreen | Fixes Intel HD Graphics |
 | VoodooI2C | Fixes trackpad |
 | VoodooI2CHID | VoodooI2C plugin for Precision Trackpad |
 | HibernationFixup | Fixes hibernation process |
+| RealtekRTL8100 | Fixes ethernet |
+| USBMap | Fixes USB power/port limit |
 
 ## Troubleshooting
 To get help just open a issue or best thing head over my thread

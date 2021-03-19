@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Created by arch-dev on 02/06/2020
-# Copyright © 2020 ArchSoftware Inc. All rights reserved.
+# Updated by arch-dev on 19/03/2021
+# Copyright © 2021 ArchSoftware Inc. All rights reserved.
 
 TOOLS="Tools"
 OUTDIR="Out"
@@ -21,6 +22,12 @@ function check()
  fi
 }
 
+function reset()
+{
+ rm -rf $OUTDIR
+ rm -rf $TOOLS
+}
+
 function download()
 {
  DIR=$1
@@ -32,6 +39,10 @@ function download()
   echo Downloading $name version: $version...
   if [[ $(echo $link | cut -d '/' -f 4) == "acidanthera" && $(echo $link | cut -d '/' -f 6) == "releases" ]]; then
    curl -L $link/download/$version/$name-$version-RELEASE.zip > $DIR/$name.zip &
+  elif [[ $(echo $link | cut -d '/' -f 5) == "itlwm" && $(echo $link | cut -d '/' -f 6) == "releases" ]]; then
+   curl -L $link/download/$version/$name\_$version\_stable_BigSur.kext.zip > $DIR/$name.zip &
+  elif [[ $(echo $link | cut -d '/' -f 5) == "IntelBluetoothFirmware" && $(echo $link | cut -d '/' -f 6) == "releases" ]]; then
+   curl -L $link/download/$version/$name.zip > $DIR/$name.zip &
   elif [[ $(echo $link | cut -d '/' -f 6) == "releases" ]]; then
    curl -L $link/download/$version/$name-$version.zip > $DIR/$name.zip &
   elif [[ $(echo $link | cut -d '/' -f 6) == "archive" ]]; then
@@ -55,9 +66,8 @@ function clean()
 }
 
 cd "$(dirname "$0")"
-rm -rf $OUTDIR
-rm -rf $TOOLS
-mkdir -p $OUTDIR/EFI/{BOOT,OC/{ACPI,Bootstrap,Drivers,Kexts,Resources/{Audio,Font,Image,Label},Tools}}
+reset
+mkdir -p $OUTDIR/EFI/{BOOT,OC/{ACPI,Drivers,Kexts,Resources/{Audio,Font,Image,Label},Tools}}
 check "curl"
 echo Downloading necessary files...
 mkdir $TEMP
@@ -67,6 +77,9 @@ download $TOOLS "Dependencies/tools.txt"
 echo Copying files to EFI...
 find $TEMP -name \*.kext -exec cp -R {} $OUTDIR/EFI/OC/Kexts \;
 rm -rf $OUTDIR/EFI/OC/Kexts/SMCLightSensor.kext
+rm -rf $OUTDIR/EFI/OC/Kexts/SMCDellSensor.kext
+rm -rf $OUTDIR/EFI/OC/Kexts/SMCProcessor.kext
+rm -rf $OUTDIR/EFI/OC/Kexts/SMCSuperIO.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/VoodooInput.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/VoodooGPIO.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/VoodooI2CServices.kext
@@ -81,10 +94,10 @@ cp -R Prebuilt/*.kext $OUTDIR/EFI/OC/Kexts
 while IFS= read -r line; do
  cp $TEMP/$(echo $line | cut -d ',' -f 1) $OUTDIR/$(echo $line | cut -d ',' -f 2)
 done <"Dependencies/efi.txt"
-cp $TEMP/OcBinaryData/OcBinaryData-master/Resources/Audio/OCEFIAudio_VoiceOver_Boot.wav $OUTDIR/EFI/OC/Resources/Audio/
+cp $TEMP/OcBinaryData/OcBinaryData-master/Resources/Audio/OCEFIAudio_VoiceOver_Boot.mp3 $OUTDIR/EFI/OC/Resources/Audio/
 cp -R $TEMP/OcBinaryData/OcBinaryData-master/Resources/Font $OUTDIR/EFI/OC/Resources/
 cp -R $TEMP/OcBinaryData/OcBinaryData-master/Resources/Image $OUTDIR/EFI/OC/Resources/
 cp -R $TEMP/OcBinaryData/OcBinaryData-master/Resources/Label $OUTDIR/EFI/OC/Resources/
-mv $ACPI/*.aml $OUTDIR/EFI/OC/ACPI/
-cp config.plist $OUTDIR/EFI/OC/
+cp $ACPI/*.aml $OUTDIR/EFI/OC/ACPI
+cp config.plist $OUTDIR/EFI/OC
 clean

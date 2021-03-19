@@ -28,8 +28,8 @@
 			<string>com.apple.driver.AppleUSBMergeNub</string>
 			<key>IOClass</key>
 			<string>AppleUSBMergeNub</string>
-			<key>IONameMatch</key>
-			<string>XHC</string>
+			<key>IOPathMatch</key>
+			<string>IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/XHC@14/XHC@14000000</string>
 			<key>IOProviderClass</key>
 			<string>AppleUSBXHCIPCI</string>
 			<key>IOProviderMergeProperties</key>

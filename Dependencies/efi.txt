@@ -1,9 +1,8 @@
-OpenCore/EFI/BOOT/BOOTx64.efi,EFI/BOOT/BOOTx64.efi
-OpenCore/EFI/OC/OpenCore.efi,EFI/OC/OpenCore.efi
-OpenCore/EFI/OC/Bootstrap/Bootstrap.efi,EFI/OC/Bootstrap/Bootstrap.efi
-OpenCore/EFI/OC/Drivers/AudioDxe.efi,EFI/OC/Drivers/AudioDxe.efi
+OpenCore/X64/EFI/BOOT/BOOTx64.efi,EFI/BOOT/BOOTx64.efi
+OpenCore/X64/EFI/OC/OpenCore.efi,EFI/OC/OpenCore.efi
+OpenCore/X64/EFI/OC/Drivers/AudioDxe.efi,EFI/OC/Drivers/AudioDxe.efi
 OcBinaryData/OcBinaryData-master/Drivers/HfsPlus.efi,EFI/OC/Drivers/HfsPlus.efi
-OpenCore/EFI/OC/Drivers/OpenCanopy.efi,EFI/OC/Drivers/OpenCanopy.efi
-OpenCore/EFI/OC/Drivers/OpenRuntime.efi,EFI/OC/Drivers/OpenRuntime.efi
-OpenCore/EFI/OC/Tools/OpenShell.efi,EFI/OC/Tools/OpenShell.efi
-OpenCore/EFI/OC/Tools/VerifyMsrE2.efi,EFI/OC/Tools/VerifyMsrE2.efi
+OpenCore/X64/EFI/OC/Drivers/OpenCanopy.efi,EFI/OC/Drivers/OpenCanopy.efi
+OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi,EFI/OC/Drivers/OpenRuntime.efi
+OpenCore/X64/EFI/OC/Tools/OpenShell.efi,EFI/OC/Tools/OpenShell.efi
+OpenCore/X64/EFI/OC/Tools/VerifyMsrE2.efi,EFI/OC/Tools/VerifyMsrE2.efi

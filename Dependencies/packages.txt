@@ -8,3 +8,5 @@ https://github.com/acidanthera/WhateverGreen/releases,WhateverGreen
 https://github.com/VoodooI2C/VoodooI2C/releases,VoodooI2C
 https://github.com/acidanthera/OcBinaryData/archive,OcBinaryData
 https://github.com/acidanthera/HibernationFixup/releases,HibernationFixup
+https://github.com/OpenIntelWireless/itlwm/releases,AirportItlwm
+https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases,IntelBluetoothFirmware
