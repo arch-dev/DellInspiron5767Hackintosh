@@ -1,7 +1,7 @@
 # Dell Inspiron 5767 Hackintosh (OpenCore)
 macOS on Dell Inspiron 5767 (i7-7500u)
 
-![OpenCore Version](https://img.shields.io/badge/opencore-v0.6.7-blue)
+![OpenCore Version](https://img.shields.io/badge/opencore-v0.6.8-blue)
 
 ![Screenshot 1](../master/Pictures/neofetch.png?raw=true)
 
@@ -66,8 +66,6 @@ Just follow official OpenCore guide here: [Creating the USB](https://dortania.gi
 6. Open System Preferences and disable PowerNap and wake on ethernet under *"Energy Saving"*
 
 7. Run script *Audio/ComboJack_Installer/install.sh* to fix 3.5mm jack output and reboot. When you will connect a dialog asking you to select what you connected should show up
-
-8. Copy *Audio/ComboJack_installer/VerbStub.kext* to your HDD *EFI/OC/Kexts* folder
 
 ## Table of contents
 ### ACPI

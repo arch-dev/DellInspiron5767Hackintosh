@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Created by arch-dev on 02/06/2020
-# Updated by arch-dev on 19/03/2021
+# Updated by arch-dev on 22/04/2021
 # Copyright © 2021 ArchSoftware Inc. All rights reserved.
 
 TOOLS="Tools"
@@ -77,7 +77,7 @@ download $TOOLS "Dependencies/tools.txt"
 echo Copying files to EFI...
 find $TEMP -name \*.kext -exec cp -R {} $OUTDIR/EFI/OC/Kexts \;
 rm -rf $OUTDIR/EFI/OC/Kexts/SMCLightSensor.kext
-rm -rf $OUTDIR/EFI/OC/Kexts/SMCDellSensor.kext
+rm -rf $OUTDIR/EFI/OC/Kexts/SMCDellSensors.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/SMCProcessor.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/SMCSuperIO.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/VoodooInput.kext
@@ -91,6 +91,8 @@ rm -rf $OUTDIR/EFI/OC/Kexts/VoodooPS2Keyboard.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/VoodooPS2Mouse.kext
 rm -rf $OUTDIR/EFI/OC/Kexts/VoodooPS2Trackpad.kext
 cp -R Prebuilt/*.kext $OUTDIR/EFI/OC/Kexts
+cp -R Audio/ComboJack_Installer/VerbStub.kext $OUTDIR/EFI/OC/Kexts
+echo Run Audio/ComboJack_Installer/install.sh script once booted the first time!!
 while IFS= read -r line; do
  cp $TEMP/$(echo $line | cut -d ',' -f 1) $OUTDIR/$(echo $line | cut -d ',' -f 2)
 done <"Dependencies/efi.txt"
