@@ -412,6 +412,7 @@
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
+			<!--
 			<dict>
 				<key>Arch</key>
 				<string>Any</string>
@@ -430,6 +431,7 @@
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
+		-->
 			<dict>
 				<key>Arch</key>
 				<string>Any</string>
@@ -1133,7 +1135,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>debug=0x100 keepsyms=1 lilucpu=8</string>
+				<string>-v debug=0x100 keepsyms=1 lilucpu=8</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>

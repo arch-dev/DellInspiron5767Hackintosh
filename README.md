@@ -1,7 +1,7 @@
 # Dell Inspiron 5767 Hackintosh (OpenCore)
 macOS on Dell Inspiron 5767 (i7-7500u)
 
-![OpenCore Version](https://img.shields.io/badge/opencore-v0.6.8-blue)
+![OpenCore Version](https://img.shields.io/badge/opencore-v0.7.0-blue)
 
 ![Screenshot 1](../master/Pictures/neofetch.png?raw=true)
 
@@ -12,6 +12,10 @@ I'm not responsible for bricked laptops, dead USB drives, thermonuclear war, or 
 ![OpenCore logo](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Logos/OpenCore_with_text_Small.png)
 
 ## Guide
+
+
+### IMPORTANT NOTICE FOR MONTEREY
+When installing the latest montery beta, make sure to update all of your kexts not from the release tabs, but from the build actions.
 
 ### IMPORTANT NOTE
 If you are upgrading from OpenCore v0.6.2 you **MUST replace the whole OC folder with the one generated from build script (adding missing files as per guide)** and **EFI/BOOT/BOOTX64.efi** file otherwise you will not able to boot again from MacOS. You **CANNOT just replace files or add/remove missing ones** since from v0.6.2 to v0.6.7 lot of things changed as well as lot of ACPI lines changed from previous Dell BIOS version to latest one.
