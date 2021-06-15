@@ -9,3 +9,4 @@ https://github.com/VoodooI2C/VoodooI2C/releases,VoodooI2C
 https://github.com/acidanthera/OcBinaryData/archive,OcBinaryData
 https://github.com/OpenIntelWireless/itlwm/releases,AirportItlwm
 https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases,IntelBluetooth
+https://github.com/acidanthera/BrcmPatchRAM/releases,BrcmPatchRAM
