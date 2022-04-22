@@ -8,4 +8,9 @@ https://github.com/acidanthera/WhateverGreen/releases,WhateverGreen
 https://github.com/VoodooI2C/VoodooI2C/releases,VoodooI2C
 https://github.com/acidanthera/OcBinaryData/archive,OcBinaryData
 https://github.com/OpenIntelWireless/itlwm/releases,AirportItlwm
-https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases,IntelBluetooth
+https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases,IntelBluetoothFirmware
+https://github.com/acidanthera/BrcmPatchRAM/releases,BrcmPatchRAM
+https://github.com/acidanthera/BrightnessKeys/releases,BrightnessKeys
+https://github.com/acidanthera/DebugEnhancer/releases,DebugEnhancer
+https://github.com/acidanthera/HibernationFixup/releases,HibernationFixup
+https://github.com/0xFireWolf/RealtekCardReader/releases,RealtekCardReader
