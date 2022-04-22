@@ -1,3 +1,4 @@
+
 # Dell Inspiron 5767 Hackintosh (OpenCore)
 macOS on Dell Inspiron 5767 (i7-7500u)
 
@@ -38,7 +39,8 @@ Just follow official OpenCore guide here: [Creating the USB](https://dortania.gi
 1. Clone this repository
 2. Run build.sh from terminal (if using WSL on Windows first install `dos2unix` and run `dos2unix build.sh` to convert the script to unix format)
 3. Open `Out/EFI/OC/config.plist` and follow [this guide](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#platforminfo) to correctly fill `"PlatformInfo">"Generic"` empty fields (**Do not change `"SystemProductName"` value, just use the given one**)
-4. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously. It should look like the following
+4. Run `build.sh` script and wait while it prepares the *EFI* folder for you (it may takes long depending on you internet connection quality)
+5. Then copy entire *EFI* folder to your USB flash drive EFI partition you created previously. It should look like the following
 
 ![Screenshot 2](../master/Pictures/OC_screen.png?raw=true)
 
