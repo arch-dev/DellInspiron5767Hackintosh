@@ -66,11 +66,13 @@ Just follow official OpenCore guide here: [Creating the USB](https://dortania.gi
     
 6. Open System Preferences and disable PowerNap and wake on ethernet under *"Energy Saving"*
 
-7. Run script `Audio/ComboJack_Installer/install.sh` to fix 3.5mm jack output and reboot. When you will connect a dialog asking you to select what you connected should show up
+7. Copy `Audio/alcplugfix_config.plist` under your home directory
 
-8. Fix iServices following [these instructions](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html).
+8. Run script `Audio/install.sh` to fix 3.5mm jack output, follow instructions (it will ask you to drag the `alcplugfix_config.plist` file, drag it from your home directory) and reboot
 
-9. (Optional) If you are dual booting with Windows or Linux, follow [these instructions](https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html#prerequisites) to prevent issues where either Windows or Linux try to overwrite the `EFI/BOOT/BOOTx64.efi` path.
+9. Fix iServices following [these instructions](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html).
+
+10. (Optional) If you are dual booting with Windows or Linux, follow [these instructions](https://dortania.github.io/OpenCore-Post-Install/multiboot/bootstrap.html#prerequisites) to prevent issues where either Windows or Linux try to overwrite the `EFI/BOOT/BOOTx64.efi` path.
 
 ## Table of contents
 ### ACPI
