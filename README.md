@@ -120,16 +120,12 @@ Just follow official OpenCore guide here: [Creating the USB](https://dortania.gi
 (1) Hibernation is under experimental phase and it's being tested continuously. For now it seems to work correctly and hibernation cycles are very close to the ones of a native MacBook Pro.  
 
 ## Troubleshooting
-To get help just open a issue or best thing head over my thread
-- https://www.tonymacx86.com/threads/guide-opencore-dell-inspiron-17-5767-i7-7500u.299242
-or visit hackintosh sites on the web
-- https://www.tonymacx86.com
+To get help just open a issue or visit hackintosh sites on the web:
 - https://www.insanelymac.com
 and others
 
 ## Where can I learn more?
 - https://dortania.github.io
-- https://www.tonymacx86.com
 - https://www.insanelymac.com
 
 ## Thanks
