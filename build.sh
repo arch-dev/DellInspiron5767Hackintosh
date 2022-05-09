@@ -35,7 +35,7 @@ function download()
  while IFS= read -r line; do
   link=$(echo $line | cut -d ',' -f 1)
   name=$(echo $line | cut -d ',' -f 2)
-  version=$(curl -s $link/latest | grep -o 'tag/[v.0-9]*' | awk -F/ '{print $2}')
+  version=$(curl -Ls -o /dev/null -w %{url_effective} $link/latest | grep -o 'tag/[v.0-9]*' | awk -F/ '{print $2}')
   echo Downloading $name version: $version...
   if [[ $(echo $link | cut -d '/' -f 4) == "acidanthera" && $(echo $link | cut -d '/' -f 6) == "releases" ]]; then
    curl -L $link/download/$version/$name-$version-RELEASE.zip > $DIR/$name.zip &
