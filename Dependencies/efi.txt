@@ -1,6 +1,5 @@
 OpenCore/X64/EFI/BOOT/BOOTx64.efi,EFI/BOOT/BOOTx64.efi
 OpenCore/X64/EFI/OC/OpenCore.efi,EFI/OC/OpenCore.efi
-OpenCore/X64/EFI/OC/Drivers/AudioDxe.efi,EFI/OC/Drivers/AudioDxe.efi
 OcBinaryData/OcBinaryData-master/Drivers/HfsPlus.efi,EFI/OC/Drivers/HfsPlus.efi
 OpenCore/X64/EFI/OC/Drivers/OpenCanopy.efi,EFI/OC/Drivers/OpenCanopy.efi
 OpenCore/X64/EFI/OC/Drivers/OpenRuntime.efi,EFI/OC/Drivers/OpenRuntime.efi

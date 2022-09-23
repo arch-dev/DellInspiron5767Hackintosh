@@ -2,7 +2,7 @@
 # Dell Inspiron 5767 Hackintosh (OpenCore)
 macOS on Dell Inspiron 5767 (i7-7500u)
 
-![OpenCore Version](https://img.shields.io/badge/opencore-v0.8.0-blue)
+![OpenCore Version](https://img.shields.io/badge/OpenCore-v0.8.4-blue)
 
 ![Screenshot 1](../master/Pictures/neofetch.png?raw=true)
 
